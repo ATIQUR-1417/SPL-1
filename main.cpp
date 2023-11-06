@@ -1,6 +1,8 @@
 #include <iostream>
 #include "standard.h"
 #include "scientific.h"
+#include "conversion.h"
+
 using namespace std;
 
 int main() {
@@ -9,150 +11,184 @@ int main() {
     double result;
     int n, r;
 
+  do{
 
-    printf("Welcome to the scientific calculator program\n");
-    printf("Please select an operation from the following menu:\n");
+    cout << "\n\t----------------------------------------\n";
+    cout << "\t        SCIENTIFIC CALCULATOR         \n";
+    cout << "\t-----------------------------------------\n\n";
 
 
-    printf("1. Add\n");
-    printf("2. Subtract\n");
-    printf("3. Multiply\n");
-    printf("4. Divide\n");
-    printf("5. Modulo\n");
-    printf("6. Square\n");
-    printf("7. Square root\n");
-    printf("8. Cube\n");
-    printf("9. Cubic root\n");
-    printf("10. Sine\n");
-    printf("11. Cosine\n");
-    printf("12. Tangent\n");
-    printf("13. Natural logarithm\n");
-    printf("14. Base-10 logarithm\n");
-    printf("15. Antilogarithm\n");
-    printf("16. Exponential function\n");
-    printf("17. Factorial\n");
-    printf("18. Permutation\n");
-    printf("19. Combination\n");
-    printf("0. Exit\n");
+    cout << "\t1. Add\t\t\t" << "11. Sine" << endl;
+    cout << "\t2. Subtract\t\t" << "12. Cosine" << endl;
+    cout << "\t3. Multiply\t\t" << "13. Tangent" << endl;
+    cout << "\t4. Divide\t\t" << "14. Natural logarithm" << endl;
+    cout << "\t5. Modulo\t\t" << "15. Base-10 logarithm" << endl;
+    cout << "\t6. Square\t\t" << "16. Antilogarithm" << endl;
+    cout << "\t7. Square root\t\t" << "17. Exponential function" << endl;
+    cout << "\t8. Cube\t\t\t" << "18. Permutation" << endl;
+    cout << "\t9. Cubic root\t\t" << "19. Combination" << endl;
+    cout << "\t10. Factorial\t\t" << "20. Base Conversion" << endl;
+    cout << "\t0. Exit" << endl;
 
-    scanf("%d", &choice);
 
-    if (choice != 0) {
+
+        cout << "\nSelect an option to continue." << endl;
+        cin >> choice;
+
         switch (choice) {
+
             case 1:
-                printf("Enter two numbers to add:\n");
-                scanf("%lf %lf", &x, &y);
+                cout << "Enter two numbers to add:\n" ;
+                cin >> x >> y;
                 result = add(x, y);
-                printf("The sum of %lf and %lf is %lf\n", x, y, result);
+                cout << "The sum of " << x << " and " << y << " is " << result << endl;
                 break;
+
             case 2:
-                printf("Enter two numbers to subtract:\n");
-                scanf("%lf %lf", &x, &y);
+                cout << "Enter two numbers to subtract:\n" ;
+                cin >> x >> y;
                 result = sub(x, y);
-                printf("The difference of %lf and %lf is %lf\n", x, y, result);
+                cout << "The difference of " << x << " and " << y << " is " << result << endl;
                 break;
+
             case 3:
-                printf("Enter two numbers to multiply:\n");
-                scanf("%lf %lf", &x, &y);
+                cout << "Enter two numbers to multiply:\n" ;
+                cin >> x >> y;
                 result = mul(x, y);
-                printf("The product of %lf and %lf is %lf\n", x, y, result);
+                cout << "The product of " << x << " and " << y << " is " << result << endl;
                 break;
+
             case 4:
-                printf("Enter two numbers to divide:\n");
-                scanf("%lf %lf", &x, &y);
+                cout << "Enter two numbers to divide:\n" ;
+                cin >> x >> y;
                 result = divide(x, y);
-                printf("The quotient of %lf and %lf is %lf\n", x, y, result);
+                cout << "The quotient of " << x << " and " << y << " is " << result << endl;
                 break;
+
             case 5:
-                printf("Enter two integers to calculate the modulo:\n");
-                scanf("%d %d", &n, &r);
+                cout << "Enter two integers to calculate the modulo:\n" ;
+                cin >> n >> r;
                 result = mod(n, r);
-                printf("The modulo of %d and %d is %d\n", n, r, (int)result);
+                cout << "The modulo of " << n << " and " << r << " is " << result << endl;
                 break;
+
             case 6:
-                printf("Enter a number to calculate its square:\n");
-                scanf("%lf", &x);
+                cout << "Enter a number to calculate its square:\n";
+                cin >> x ;
                 result = sqr(x);
-                printf("The square of %lf is %lf\n", x, result);
+                cout << "The square of " << x << " is " << result << endl;
                 break;
+
             case 7:
-                printf("Enter a number to calculate its square root:\n");
-                scanf("%lf", &x);
+                cout << "Enter a number to calculate its square root:\n";
+                cin >> x ;
                 result = sqrt(x);
-                printf("The square root of %lf is %lf\n", x, result);
+                cout << "The square root of " << x << " is " << result << endl;
                 break;
+
             case 8:
-                printf("Enter a number to calculate its cube:\n");
-                scanf("%lf", &x);
+                cout << "Enter a number to calculate its cube:\n";
+                cin >> x ;
                 result = cube(x);
-                printf("The cube of %lf is %lf\n", x, result);
+                cout << "The cube of " << x << " is " << result << endl;
                 break;
+
             case 9:
-                printf("Enter a number to calculate its cubic root:\n");
-                scanf("%lf", &x);
+                cout << "Enter a number to calculate its cubic root:\n";
+                cin >> x ;
                 result = cbrt(x);
-                printf("The cubic root of %lf is %lf\n", x, result);
+                cout << "The cubic root of " << x << " is " << result << endl;
                 break;
-            case 10:
-                printf("Enter an angle in radians to calculate its sine:\n");
-                scanf("%lf", &x);
-                result = sin(x);
-                printf("The sine of %lf radians is %lf\n", x, result);
-                break;
-            case 11:
-                printf("Enter an angle in radians to calculate its cosine:\n");
-                scanf("%lf", &x);
-                result = cos(x);
-                printf("The cosine of %lf radians is %lf\n", x, result);
-                break;
-            case 12:
-                printf("Enter an angle in radians to calculate its tangent:\n");
-                scanf("%lf", &x);
-                result = tan(x);
-                printf("The tangent of %lf radians is %lf\n", x, result);
-                break;
-            case 13:
-                printf("Enter a number to calculate its natural logarithm:\n");
-                scanf("%lf", &x);
-                result = ln(x);
-                printf("The natural logarithm of %lf is %lf\n", x, result);
-                break;
-            case 14:
-                printf("Enter a number to calculate its base-10 logarithm:\n");
-                scanf("%lf", &x);
-                result = log10(x);
-                printf("The base-10 logarithm of %lf is %lf\n", x, result);
-                break;
-            case 15:
-                printf("Enter a number and a base to calculate its antilogarithm:\n");
-                scanf("%lf", &x);
-                result = antilog_10(x);
-                printf("The antilogarithm of %lf with base 10 is %lf\n", x, result);
-                break;
-            case 16:
-                printf("Enter a number to calculate its exponential function:\n");
-                scanf("%lf", &x);
-                result = exp(x);
-                printf("The exponential function of %lf is %lf\n", x, result);
-                break;
-            case 17:
-                printf("Enter an integer to calculate its factorial:\n");
-                scanf("%d", &n);
+
+             case 10:
+                cout << "Enter an integer to calculate its factorial:" << endl;
+                cin >> n;
+                if (n>100)
+                    cout << "Math Error" << endl;
+                else{
                 result = fact(n);
-                printf("The factorial of %d is %d\n", n, (int)result);
+                cout << "The factorial of " << n << " is " << result << endl;
+                }
                 break;
+
+            case 11:
+                cout << "Enter an angle in degree to calculate its sine: " << endl;
+                cin >> x;
+                result = sin(x);
+                cout << " The sine of " << x << " degree is " << result << endl;
+                break;
+
+            case 12:
+                cout << "Enter an angle in degree to calculate its cosine: " << endl;
+                cin >> x;
+                result = cos(x);
+                cout << " The cosine of " << x << " degree is " << result << endl;
+                break;
+
+            case 13:
+                cout << "Enter an angle in degree to calculate its tangent: " << endl;
+                cin >> x;
+                result = tan(x);
+                cout << " The tangent of " << x << " degree is " << result << endl;
+                break;
+
+            case 14:
+                cout << "Enter a number to calculate its natural logarithm: " << endl;
+                cin >> x;
+                result = ln(x);
+                cout <<"The natural logarithm of " << x << " is " << result;
+                break;
+
+            case 15:
+                cout << "Enter a number to calculate its base-10 logarithm: " << endl;
+                cin >> x;
+                result = log10(x);
+                cout << "The base-10 logarithm of " << x << " is " << result;
+                break;
+
+            case 16:
+                cout << "Enter a number to calculate its antilogarithm: " << endl;
+                cin >> x;
+                result = antilog_10(x);
+                cout << "The antilogarithm of " << x << " is " << result;
+                break;
+
+            case 17:
+                cout << "Enter a number to calculate its exponential function: " << endl;
+                cin >> x;
+                result = exp(x);
+                cout << "The exponential function of " << x << " is " << result;
+                break;
+
             case 18:
-                printf("Enter two integers n and r to calculate nPr:\n");
-                scanf("%d %d", &n, &r);
+                cout << "Enter two integers n and r to calculate nPr: " << endl;
+                cin >> n >> r;
                 result = perm(n, r);
-                printf("The permutation of %d and %d is %d\n", n, r, (int)result);
+                cout << "The permutation of " << n << " and " << r << " is " << result;
                 break;
+
             case 19:
-                printf("Enter two integers n and r to calculate nCr:\n");
-                scanf("%d %d", &n, &r);
+                cout << "Enter two integers n and r to calculate nCr: " << endl;
+                cin >> n >> r;
                 result = comb(n, r);
-                printf("The combination of %d and %d is %d\n", n, r, (int)result);
+                cout << "The combination of " << n << " and " << r << " is " << result;
                 break;
+
+            case 20:
+                conv();
+                break;
+
+            case 0:
+                cout << "Thank you for using this program.\n";
+                break;
+
+            default:
+                cout << "Invalid choice. Please try again.\n";
+                break;
+
         }
-    }
+
+    }while(choice != 0 );
+
+  return 0;
 }
