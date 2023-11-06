@@ -11,9 +11,9 @@ double ln(double x);
 double log10(double x);
 double antilog_10(double x);
 double exp(double x);
-int fact(int n);
-int perm(int n, int r);
-int comb(int n, int r);
+double fact(int n);
+double perm(int n, int r);
+double comb(int n, int r);
 
 
 #endif // SCIENTIFIC_H
