@@ -61,15 +61,23 @@ int main() {
             case 4:
                 cout << "Enter two numbers to divide:\n" ;
                 cin >> x >> y;
+                if(y==0)
+                    cout << "Error:Division by zero\n";
+                else {
                 result = divide(x, y);
                 cout << "The quotient of " << x << " and " << y << " is " << result << endl;
+                }
                 break;
 
             case 5:
                 cout << "Enter two integers to calculate the modulo:\n" ;
                 cin >> n >> r;
+                if(r==0)
+                    cout << "Error:Division by zero\n";
+                else {
                 result = mod(n, r);
                 cout << "The modulo of " << n << " and " << r << " is " << result << endl;
+                }
                 break;
 
             case 6:
@@ -103,7 +111,7 @@ int main() {
              case 10:
                 cout << "Enter an integer to calculate its factorial:" << endl;
                 cin >> n;
-                if (n>100)
+                if (n>150)
                     cout << "Math Error" << endl;
                 else{
                 result = fact(n);
@@ -126,24 +134,32 @@ int main() {
                 break;
 
             case 13:
+
                 cout << "Enter an angle in degree to calculate its tangent: " << endl;
                 cin >> x;
-                result = tan(x);
-                cout << " The tangent of " << x << " degree is " << result << endl;
+                tan(x);
                 break;
 
             case 14:
                 cout << "Enter a number to calculate its natural logarithm: " << endl;
                 cin >> x;
+                if (x <= 0)
+                   cout << "Math Error" << endl;
+                else {
                 result = ln(x);
                 cout <<"The natural logarithm of " << x << " is " << result;
+                }
                 break;
 
             case 15:
                 cout << "Enter a number to calculate its base-10 logarithm: " << endl;
                 cin >> x;
+                if (x <= 0)
+                   cout << "Math Error" << endl;
+                else {
                 result = log10(x);
                 cout << "The base-10 logarithm of " << x << " is " << result;
+                }
                 break;
 
             case 16:
@@ -163,15 +179,23 @@ int main() {
             case 18:
                 cout << "Enter two integers n and r to calculate nPr: " << endl;
                 cin >> n >> r;
+                if (n < 0 || r < 0 || r > n)
+                   cout << "Error: Invalid arguments\n";
+                 else {
                 result = perm(n, r);
                 cout << "The permutation of " << n << " and " << r << " is " << result;
+                 }
                 break;
 
             case 19:
                 cout << "Enter two integers n and r to calculate nCr: " << endl;
                 cin >> n >> r;
+                 if (n < 0 || r < 0 || r > n)
+                   cout << "Error: Invalid arguments\n";
+                 else {
                 result = comb(n, r);
                 cout << "The combination of " << n << " and " << r << " is " << result;
+                 }
                 break;
 
             case 20:
