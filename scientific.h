@@ -6,7 +6,7 @@
 
 double sin(double x);
 double cos(double x);
-double tan(double x);
+int tan(double x);
 double ln(double x);
 double log10(double x);
 double antilog_10(double x);
