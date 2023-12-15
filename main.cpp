@@ -90,8 +90,12 @@ int main() {
             case 7:
                 cout << "Enter a number to calculate its square root:\n";
                 cin >> x ;
+                if (x<0)
+                    cout << "Math Error" << endl;
+                else {
                 result = sqrt(x);
                 cout << "The square root of " << x << " is " << result << endl;
+                }
                 break;
 
             case 8:
@@ -123,14 +127,14 @@ int main() {
                 cout << "Enter an angle in degree to calculate its sine: " << endl;
                 cin >> x;
                 result = sin(x);
-                cout << " The sine of " << x << " degree is " << result << endl;
+                cout << "The sine of " << x << " degree is " << result << endl;
                 break;
 
             case 12:
                 cout << "Enter an angle in degree to calculate its cosine: " << endl;
                 cin >> x;
                 result = cos(x);
-                cout << " The cosine of " << x << " degree is " << result << endl;
+                cout << "The cosine of " << x << " degree is " << result << endl;
                 break;
 
             case 13:
