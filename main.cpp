@@ -21,7 +21,7 @@ int main() {
     cout << "\t1. Add\t\t\t" << "11. Sine" << endl;
     cout << "\t2. Subtract\t\t" << "12. Cosine" << endl;
     cout << "\t3. Multiply\t\t" << "13. Tangent" << endl;
-    cout << "\t4. Divide\t\t" << "14. Natural logarithm" << endl;
+    cout << "\t4. Divide\t\t" << "14. Natural logarithm(ln)" << endl;
     cout << "\t5. Modulo\t\t" << "15. Base-10 logarithm" << endl;
     cout << "\t6. Square\t\t" << "16. Antilogarithm" << endl;
     cout << "\t7. Square root\t\t" << "17. Exponential function" << endl;
@@ -113,14 +113,11 @@ int main() {
                 break;
 
              case 10:
+
                 cout << "Enter an integer to calculate its factorial:" << endl;
                 cin >> n;
-                if (n>150)
-                    cout << "Math Error" << endl;
-                else{
                 result = fact(n);
                 cout << "The factorial of " << n << " is " << result << endl;
-                }
                 break;
 
             case 11:
